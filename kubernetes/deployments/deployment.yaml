@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: g33tha/python:1.0.4
+        image: g33tha/python:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
