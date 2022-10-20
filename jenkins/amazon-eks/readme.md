@@ -139,7 +139,7 @@ pipeline {
         stage('git clone') {
             steps{
                 sh(script: """
-                    git clone https://github.com/marcel-dempers/docker-development-youtube-series.git
+                    git clone https://github.com/G33tha/docker-development-youtube-series.git
                 """, returnStdout: true) 
             }
         }
@@ -149,7 +149,7 @@ pipeline {
                 sh script: '''
                 #!/bin/bash
                 cd $WORKSPACE/docker-development-youtube-series/python
-                docker build . --network host -t aimvector/python:${BUILD_NUMBER}
+                docker build . --network host -t g33tha/python:${BUILD_NUMBER}
                 '''
             }
         }
@@ -157,7 +157,7 @@ pipeline {
         stage('docker push') {
             steps{
                 sh(script: """
-                    docker push aimvector/python:${BUILD_NUMBER}
+                    docker push g33tha/python:${BUILD_NUMBER}
                 """)
             }
         }
